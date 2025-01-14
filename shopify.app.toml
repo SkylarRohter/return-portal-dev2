@@ -1,0 +1,36 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "53176cb643bb33ae4cc0ae1567bac6ec"
+application_url = "https://erik-ct-slideshow-gardening.trycloudflare.com"
+embedded = true
+name = "return-portal-dev2"
+handle = "return-portal-dev2"
+
+[webhooks]
+api_version = "2025-01"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://erik-ct-slideshow-gardening.trycloudflare.com/auth/callback",
+  "https://erik-ct-slideshow-gardening.trycloudflare.com/auth/shopify/callback",
+  "https://erik-ct-slideshow-gardening.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "kqreturndev.myshopify.com"
+automatically_update_urls_on_dev = true
